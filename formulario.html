@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Novo Feedback</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styleForm.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  </head>
+
+  <body>
+    <main class="editor">
+      <!-- VOLTAR PARA HOME -->
+      <a href="index.html">← Voltar</a>
+
+      <h1>Novo Feedback</h1>
+
+      <form id="formFeedback">
+        <!-- NOME DO ALUNO -->
+        <section>
+          <label for="nomeAluno">Nome do Aluno:</label>
+
+          <input
+            type="text"
+            id="nomeAluno"
+            placeholder="Digite o nome do aluno"
+            required
+          />
+        </section>
+
+        <!-- HABILIDADES -->
+        <section>
+          <h2>Habilidades</h2>
+
+          <div class="habilidade">
+            <label for="habilidade1">Foco</label>
+
+            <!-- <input
+              type="text"
+              id="habilidade1"
+              placeholder="Nome da habilidade"
+            /> -->
+
+            <div class="estrelas">
+              <input type="radio" name="habilidade1" value="1" />
+              <input type="radio" name="habilidade1" value="2" />
+              <input type="radio" name="habilidade1" value="3" />
+              <input type="radio" name="habilidade1" value="4" />
+              <input type="radio" name="habilidade1" value="5" />
+            </div>
+          </div>
+
+          <div class="habilidade">
+            <label for="habilidade2">Lógica</label>
+
+            <!-- <input
+              type="text"
+              id="habilidade2"
+              placeholder="Nome da habilidade"
+            /> -->
+
+            <div class="estrelas">
+              <input type="radio" name="habilidade2" value="1" />
+              <input type="radio" name="habilidade2" value="2" />
+              <input type="radio" name="habilidade2" value="3" />
+              <input type="radio" name="habilidade2" value="4" />
+              <input type="radio" name="habilidade2" value="5" />
+            </div>
+          </div>
+
+          <div class="habilidade">
+            <label for="habilidade3">Resiliência</label>
+
+            <!--   <input
+              type="text"
+              id="habilidade3"
+              placeholder="Nome da habilidade"
+            /> -->
+
+            <div class="estrelas">
+              <input type="radio" name="habilidade3" value="1" />
+              <input type="radio" name="habilidade3" value="2" />
+              <input type="radio" name="habilidade3" value="3" />
+              <input type="radio" name="habilidade3" value="4" />
+              <input type="radio" name="habilidade3" value="5" />
+            </div>
+          </div>
+        </section>
+
+        <!-- FEEDBACK DO PROFESSOR -->
+        <section>
+          <label for="feedbackProfessor"> Feedback do professor: </label>
+
+          <textarea
+            id="feedbackProfessor"
+            placeholder="Escreva aqui o feedback do aluno..."
+            rows="8"
+          ></textarea>
+        </section>
+
+        <!-- PROJETOS -->
+
+        <!-- PROJETOS -->
+        <section class="secao-projetos">
+          <h2>Projetos</h2>
+
+          <!-- LINKS ADICIONADOS -->
+          <div id="linksAdicionados"></div>
+
+          <button type="button" id="btnAdicionarLink">+ Adicionar link</button>
+
+          <!-- IMAGENS ADICIONADAS -->
+          <div id="imagensAdicionadas"></div>
+
+          <button type="button" id="btnAdicionarImagem">
+            + Adicionar imagem
+          </button>
+
+          <p id="contadorImagens">0 de 5 imagens adicionadas</p>
+
+          <!-- SELETOR DE IMAGENS -->
+          <input
+            type="file"
+            id="seletorImagem"
+            accept="image/*"
+            multiple
+            hidden
+          />
+        </section>
+
+        <!-- MODAL PARA ADICIONAR LINK -->
+        <section>
+          <button type="submit" id="btnGerarLink">
+            Gerar link do feedback
+          </button>
+        </section>
+      </form>
+
+      <!-- MODAL FORA DO FORMULÁRIO PRINCIPAL -->
+      <dialog id="modalLink">
+        <form id="formLink">
+          <h2>Adicionar link</h2>
+
+          <label for="novoLink">Cole o link do projeto:</label>
+
+          <input type="url" id="novoLink" placeholder="https://..." required />
+
+          <div class="acoes-modal">
+            <button type="button" id="btnCancelarLink">Cancelar</button>
+            <button type="submit">Salvar link</button>
+          </div>
+        </form>
+      </dialog>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

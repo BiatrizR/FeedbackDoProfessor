@@ -1,0 +1,658 @@
+/* =================================
+   PÁGINA DO FORMULÁRIO
+================================= */
+
+body:has(.editor) {
+  display: block;
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 50px 20px;
+  font-family: "Poppins", sans-serif;
+}
+
+/* CONTAINER PRINCIPAL */
+
+.editor {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  max-width: 850px;
+
+  margin: 0 auto;
+
+  padding: 55px 65px;
+
+  background: #ffffff;
+
+  border-radius: 15px;
+
+  box-shadow: 0 15px 50px rgba(75, 90, 160, 0.13);
+
+  animation: aparecer 0.8s ease;
+}
+
+/* LINK VOLTAR */
+
+.editor > a {
+  display: inline-block;
+
+  margin-bottom: 30px;
+
+  color: #7886c5;
+
+  text-decoration: none;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  transition: 0.3s;
+}
+
+.editor > a:hover {
+  color: #9b76ee;
+  transform: translateX(-4px);
+}
+
+/* TÍTULO */
+
+.editor h1 {
+  font-size: 30px;
+
+  color: #394b87;
+
+  margin-bottom: 35px;
+
+  padding-bottom: 20px;
+
+  border-bottom: 2px solid #edf0ff;
+}
+
+.editor h2 {
+  font-size: 20px;
+
+  color: #5665a1;
+
+  margin-bottom: 20px;
+}
+
+/* SEÇÕES */
+
+.editor section {
+  margin-bottom: 35px;
+}
+
+/* LABELS */
+
+.editor label {
+  display: block;
+
+  color: #505b83;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  margin-bottom: 10px;
+}
+
+/* CAMPOS DE TEXTO */
+
+.editor input[type="text"],
+.editor input[type="url"],
+.editor textarea {
+  width: 100%;
+
+  padding: 14px 16px;
+
+  border: 1px solid #e1e5f5;
+
+  border-radius: 10px;
+
+  outline: none;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 14px;
+
+  color: #444d70;
+
+  background: #fafbff;
+
+  transition: 0.3s;
+}
+
+/* EFEITO AO SELECIONAR CAMPO */
+
+.editor input:focus,
+.editor textarea:focus {
+  border-color: #8e91ef;
+
+  background: #ffffff;
+
+  box-shadow: 0 0 0 4px rgba(142, 145, 239, 0.12);
+}
+
+/* ÁREA DE TEXTO */
+
+.editor textarea {
+  resize: vertical;
+
+  min-height: 160px;
+
+  line-height: 1.7;
+}
+
+/* =================================
+   HABILIDADES
+================================= */
+
+.habilidade {
+  padding: 20px;
+
+  margin-bottom: 18px;
+
+  background: #f7f8ff;
+
+  border: 1px solid #eceeff;
+
+  border-radius: 12px;
+
+  transition: 0.3s;
+}
+
+.habilidade label {
+  color: #07d430;
+  text-size: 20px;
+}
+
+.habilidade:hover {
+  border-color: #c7c9fa;
+
+  transform: translateY(-2px);
+}
+
+/* ESTRELAS */
+
+.estrelas {
+  display: flex;
+
+  gap: 12px;
+
+  margin-top: 15px;
+}
+
+.estrelas input[type="radio"] {
+  appearance: none;
+
+  width: 27px;
+  height: 27px;
+
+  cursor: pointer;
+
+  background: #dce0ed;
+
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 94%,
+    50% 72%,
+    21% 94%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
+
+  transition: 0.2s;
+}
+
+.estrelas input[type="radio"] {
+  background: #dce0ed;
+}
+
+.estrelas input[type="radio"].selecionada {
+  background: #ffc857;
+}
+
+.estrelas input[type="radio"]:hover {
+  background: #ffc857;
+  transform: scale(1.2);
+}
+
+/* =================================
+   PROJETOS
+================================= */
+
+.projeto {
+  padding: 22px;
+
+  margin-bottom: 18px;
+
+  background: #f8f7ff;
+
+  border: 1px solid #e9e5ff;
+
+  border-radius: 12px;
+}
+
+.projeto input[type="file"] {
+  display: block;
+
+  width: 100%;
+
+  margin-bottom: 18px;
+
+  padding: 10px;
+
+  border-radius: 8px;
+
+  background: #ffffff;
+
+  border: 1px dashed #c5b9f2;
+
+  color: #697397;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 12px;
+}
+
+/* =================================
+   BOTÕES
+================================= */
+
+#btnAdicionarProjeto {
+  padding: 12px 20px;
+
+  border: 1px solid #b8b4f2;
+
+  border-radius: 10px;
+
+  background: #f0edff;
+
+  color: #7164bd;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+#btnAdicionarProjeto:hover {
+  background: #e4deff;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 5px 15px rgba(120, 100, 200, 0.12);
+}
+
+/* BOTÃO ENVIAR */
+
+#btnEnviar {
+  width: 100%;
+
+  padding: 16px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  background: linear-gradient(135deg, #668cff, #9b76ee);
+
+  color: #ffffff;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 6px 0 #514fae,
+    0 12px 25px rgba(91, 102, 220, 0.2);
+
+  transition: 0.25s;
+}
+
+#btnEnviar:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 10px 0 #514fae,
+    0 18px 30px rgba(91, 102, 220, 0.3);
+}
+
+#btnEnviar:active {
+  transform: translateY(3px);
+
+  box-shadow: 0 2px 0 #514fae;
+}
+
+/* =================================
+   RESPONSIVIDADE
+================================= */
+
+@media (max-width: 650px) {
+  body:has(.editor) {
+    padding: 20px 10px;
+  }
+
+  .editor {
+    padding: 30px 20px;
+
+    border-radius: 12px;
+  }
+
+  .editor h1 {
+    font-size: 25px;
+  }
+
+  .editor h2 {
+    font-size: 18px;
+  }
+
+  .habilidade {
+    padding: 15px;
+  }
+
+  .estrelas {
+    gap: 10px;
+  }
+}
+
+/* =================================
+   LINKS ADICIONADOS
+================================= */
+
+.link-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+
+  padding: 14px;
+
+  margin-bottom: 12px;
+
+  background: #f2f5ff;
+
+  border-radius: 10px;
+}
+
+.link-item a {
+  color: #687bd0;
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+.link-item button,
+.imagem-item button {
+  border: none;
+  background: #ffe9ed;
+  color: #cb6479;
+
+  padding: 8px 12px;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+}
+
+/* =================================
+   IMAGENS ADICIONADAS
+================================= */
+
+.imagem-item {
+  display: inline-flex;
+  flex-direction: column;
+
+  width: 180px;
+
+  padding: 12px;
+
+  margin: 12px 10px 12px 0;
+
+  background: #f5f3ff;
+
+  border-radius: 12px;
+
+  vertical-align: top;
+}
+
+.imagem-item img {
+  width: 100%;
+  height: 120px;
+
+  object-fit: cover;
+
+  border-radius: 8px;
+}
+
+.imagem-item p {
+  font-size: 11px;
+  margin: 8px 0;
+
+  overflow-wrap: anywhere;
+}
+
+#contadorImagens {
+  margin-top: 12px;
+  color: #8991b2;
+  font-size: 12px;
+}
+
+/* =================================
+   MODAL DE LINKS
+================================= */
+
+#modalLink {
+  width: calc(100% - 30px);
+  max-width: 450px;
+
+  margin: auto;
+
+  padding: 30px;
+
+  border: none;
+  border-radius: 18px;
+
+  background: white;
+
+  box-shadow: 0 20px 60px rgba(50, 60, 120, 0.2);
+}
+
+#modalLink::backdrop {
+  background: rgba(40, 45, 90, 0.4);
+  backdrop-filter: blur(5px);
+}
+
+#modalLink form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#modalLink h2 {
+  color: #5969a9;
+  font-size: 21px;
+}
+/* 
+#modalLink input {
+  width: 100%;
+  padding: 13px;
+
+  border: 1px solid #e1e5f5;
+  border-radius: 9px;
+} */
+
+.acoes-modal {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.acoes-modal button {
+  padding: 11px 16px;
+
+  border: none;
+  border-radius: 9px;
+
+  cursor: pointer;
+
+  background: #eeeaff;
+  color: #6659ae;
+  font-weight: 600;
+}
+
+/* =================================
+   VISUALIZAÇÃO DO FEEDBACK
+================================= */
+
+.visualizacao-feedback {
+  align-items: center;
+  padding-top: 20px;
+}
+
+.visualizacao-feedback h2 {
+  font-size: 25px;
+  color: #394b87;
+  margin-bottom: 25px;
+}
+
+.visualizacao-feedback h3 {
+  color: #16d005;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+.visualizacao-feedback p {
+  color: #606987;
+  line-height: 1.8;
+  margin-bottom: 12px;
+  white-space: pre-wrap;
+}
+
+.visualizacao-feedback a {
+  display: block;
+  color: #668cff;
+  margin-bottom: 12px;
+  overflow-wrap: anywhere;
+}
+
+.imagem-feedback {
+  display: block;
+
+  width: 100%;
+  max-width: 500px;
+
+  height: auto;
+
+  margin: 15px 0;
+
+  border-radius: 12px;
+
+  box-shadow: 0 5px 20px rgba(50, 60, 120, 0.12);
+}
+
+/* BOTÃO DE COPIAR LINK */
+
+.editor > button {
+  padding: 13px 20px;
+
+  margin-top: 15px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: linear-gradient(135deg, #668cff, #9b76ee);
+
+  color: white;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+#btnAdicionarLink,
+#btnAdicionarImagem {
+  padding: 12px 20px;
+  border: 1px solid #b8b4f2;
+  margin: 10px;
+  border-radius: 10px;
+  background: #f0edff;
+  color: #7164bd;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#btnAdicionarLink:hover,
+#btnAdicionarImagem:hover {
+  background: #e4deff;
+  transform: translateY(-2px);
+}
+
+#btnGerarLink {
+  width: 100%;
+  padding: 16px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #668cff, #9b76ee);
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Centralizar conteúdo da página
+/* CENTRALIZAR FEEDBACK */
+
+.cabecalho-feedback {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+  margin-bottom: 25px;
+}
+
+.cabecalho-feedback h1 {
+  margin: 20px;
+  padding: 0;
+  border: none;
+  font-size: 28px;
+  text-align: left;
+}
+
+.cabecalho-feedback video {
+  width: 65px;
+  height: 65px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+/* ANIMAÇÃO */
+cabecalho-feedback div {
+  flex-direction: row;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cabecalho-feedback video {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+.visualizacao-feedback .imagem-feedback {
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
